@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maxopen_test/bloc/login_page_bloc/login_page_bloc.dart';
 import 'package:maxopen_test/ui/login_page/login_page_view.dart';
 
+/// Login page with bloc builder logic
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -11,6 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginPageBloc, LoginPageState>(

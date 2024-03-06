@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maxopen_test/utils/extentions.dart';
 
+
+/// Widget for default title and subtitle texts
 class TitleAndSubtitle extends StatelessWidget {
   final String title;
   final String subtitle;

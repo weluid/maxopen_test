@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Local storage with basic values
 class LocalStorage {
   static final _singleton = LocalStorage._internal();
 

@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 
 @immutable
 class Localization {
-  final String welcome;
-
+  final String contactYou;
+  final String provideName;
+  final String yourName;
+  final String continueLabel;
 
   const Localization({
-    required this.welcome,
-
+    required this.contactYou,
+    required this.provideName,
+    required this.yourName,
+    required this.continueLabel,
   });
 
-  factory Localization.fromJson(Map<String, dynamic> data) =>
-      Localization(
-        welcome: data['welcome'],
-
+  factory Localization.fromJson(Map<String, dynamic> data) => Localization(
+        contactYou: data['contactYou'],
+        provideName: data['provideName'],
+        yourName: data['yourName'],
+        continueLabel: data['continueLabel'],
       );
 }
-

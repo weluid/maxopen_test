@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:maxopen_test/bloc/localization_bloc.dart';
+
 import 'package:maxopen_test/ui/login_page/login_page.dart';
 import 'package:maxopen_test/utils/themes/light_theme.dart';
 
@@ -25,14 +24,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       title: 'app',
       navigatorKey: App.navigatorKey,
       theme: LightTheme.themeData,
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: LocalizationCubit().localizationList,
-      localeListResolutionCallback:
-      LocalizationCubit.localeListResolutionCallback,
       builder: (BuildContext context, Widget? child) {
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(

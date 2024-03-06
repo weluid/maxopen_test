@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maxopen_test/bloc/login_page_bloc/login_page_bloc.dart';
@@ -6,6 +8,8 @@ import 'package:maxopen_test/ui/global_widgets/title_and_subtitle.dart';
 
 import '../global_widgets/common_button.dart';
 
+/// Login page view
+/// responsible for displaying the UI
 class LoginPageView extends StatefulWidget {
   final bool loadingState;
   final String? name;
@@ -61,7 +65,11 @@ class _LoginPageViewState extends State<LoginPageView> {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22),
+              padding: EdgeInsets.only(
+                left: 22,
+                right: 22,
+                bottom: 20,
+              ),
               child: CommonButton(
                 title: 'Продовжити',
                 onTap: textController.text.isNotEmpty

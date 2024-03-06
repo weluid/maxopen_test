@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import '../app.dart';
 import '../utils/animation_route.dart';
 
+
+/// Navigation service
+///
+/// used like IOS animated navigation for IOS/Android platforms
 class NavigationService {
   void push(Widget classTo, {BuildContext? context}) {
     Navigator.push(

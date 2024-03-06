@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:maxopen_test/bloc/home_page_bloc/home_page_bloc.dart';
 import 'package:maxopen_test/ui/home_page/home_page_view.dart';
 
+/// Home page with bloc builder logic
 class HomePage extends StatefulWidget {
   final Position? position;
 

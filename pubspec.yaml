@@ -41,6 +41,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/l10n/
     - assets/images/
     - assets/images/home_page/
     - assets/map_style/
