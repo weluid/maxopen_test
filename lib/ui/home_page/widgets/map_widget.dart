@@ -6,12 +6,14 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:maxopen_test/ui/global_widgets/title_and_subtitle.dart';
 import 'package:maxopen_test/utils/extentions.dart';
+import 'package:permission_handler/permission_handler.dart';
 
+/// Google map widget with specific theme
 class MapWidget extends StatefulWidget {
   final Position? position;
   final bool internetConnection;
 
-  const MapWidget({super.key, this.position, this.internetConnection = true});
+  const MapWidget({super.key, this.position, required this.internetConnection});
 
   @override
   State<StatefulWidget> createState() => _MapWidgetState();
@@ -22,6 +24,8 @@ class _MapWidgetState extends State<MapWidget> {
   late LatLng sourceLocation;
   late String _darkMapStyle;
 
+  /// if data is not null set current position
+  /// else set the default value
   @override
   void initState() {
     super.initState();
@@ -37,11 +41,13 @@ class _MapWidgetState extends State<MapWidget> {
     _loadMapStyles();
   }
 
+  /// Load map theme json file
   Future _loadMapStyles() async {
     _darkMapStyle =
         await rootBundle.loadString('assets/map_style/dark_mode.json');
   }
 
+  /// set specific theme to Google Map
   Future _setMapStyle() async {
     final controller = await _controller.future;
 
@@ -77,7 +83,7 @@ class _MapWidgetState extends State<MapWidget> {
                   _controller.complete(controller);
                   _setMapStyle();
                 }),
-            widget.position == null || widget.internetConnection
+            widget.position == null || widget.internetConnection == false
                 ? _errorMessage()
                 : const SizedBox(),
           ],
@@ -86,11 +92,13 @@ class _MapWidgetState extends State<MapWidget> {
     );
   }
 
+  /// Error internet connection or location hover message
   Widget _errorMessage() {
     return Container(
       color: Colors.black.withOpacity(0.6),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             width: 65,
@@ -112,6 +120,22 @@ class _MapWidgetState extends State<MapWidget> {
             subtitle: "Відсутність доступу до геолокації.\n"
                 "Переконайтеся, що у додатку увімкнено геолокацію та "
                 "перевірте з'єднання з Інтернетом.",
+          ),
+          TextButton(
+            onPressed: () {
+              openAppSettings();
+            },
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Налаштування геолокації"),
+                Icon(
+                  Icons.chevron_right,
+                  size: 10,
+                )
+              ],
+            ),
           ),
         ],
       ),

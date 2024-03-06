@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maxopen_test/utils/themes/styles.dart';
@@ -140,6 +139,12 @@ class LightTheme {
         fontFamily: AppFont.dewiRegular,
         color: colors.textPrimary,
       ),
+      labelSmall:  TextStyle(
+        fontSize: 9,
+        fontFamily: AppFont.sfProDisplayMedium,
+        color: colors.textPrimary,
+      ),
+
     );
   }
 }

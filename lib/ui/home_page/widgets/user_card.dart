@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maxopen_test/utils/extentions.dart';
 
+
+/// User card with name from Local Storage - User model
 class UserCard extends StatelessWidget {
   final String userName;
 
@@ -47,16 +49,21 @@ class UserCard extends StatelessWidget {
                   'Привіт,',
                   style: context.textTheme.bodyMedium,
                 ),
-                Text(
-                  userName,
-                  style: context.textTheme.displayLarge,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: Text(
+                    userName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: context.textTheme.displayLarge,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 Text(
                   "Додавання авто",
                   style: context.textTheme.headlineSmall,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 6),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.68,
                   child: Text(
@@ -68,11 +75,13 @@ class UserCard extends StatelessWidget {
                   onPressed: () {},
                   child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                     children: [
-                       Text("Додати авто"),
-                       Icon(Icons.chevron_right, size: 10,)
-                     ],
-
+                    children: [
+                      Text("Додати авто"),
+                      Icon(
+                        Icons.chevron_right,
+                        size: 10,
+                      )
+                    ],
                   ),
                 ),
               ],
