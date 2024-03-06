@@ -135,6 +135,11 @@ class LightTheme {
         fontFamily: AppFont.dewiRegular,
         color: colors.textPrimary.withOpacity(0.6),
       ),
+      headlineMedium: TextStyle(
+        fontSize: 15,
+        fontFamily: AppFont.dewiRegular,
+        color: colors.textPrimary,
+      ),
     );
   }
 }

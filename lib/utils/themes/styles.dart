@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppFont {
-
   static const String dewiSemibold = 'dewiSemibold';
   static const String dewiBold = 'dewiBold';
   static const String dewiRegular = 'dewiRegular';
@@ -15,6 +14,7 @@ abstract class AppColor {
   final Color buttonDisable;
   final Color hintColor;
   final Color darkGray;
+  final Color lightGray;
 
   const AppColor({
     required this.backgroundPrimary,
@@ -23,6 +23,7 @@ abstract class AppColor {
     required this.buttonDisable,
     required this.hintColor,
     required this.darkGray,
+    required this.lightGray,
   });
 }
 
@@ -44,6 +45,9 @@ class AppColorLight implements AppColor {
 
   @override
   Color get darkGray => const Color.fromRGBO(41, 41, 41, 1);
+
+  @override
+  Color get lightGray => const Color.fromRGBO(110, 110, 110, 1);
 }
 
 class AppColorDark implements AppColor {
@@ -64,4 +68,7 @@ class AppColorDark implements AppColor {
 
   @override
   Color get darkGray => const Color.fromRGBO(41, 41, 41, 1);
+
+  @override
+  Color get lightGray => const Color.fromRGBO(110, 110, 110, 1);
 }
