@@ -1,16 +1,46 @@
-# maxopen_test
+# Test app
+---
+Built using BloC architecture.
 
-A new Flutter project.
+#### Functionality:
 
-## Getting Started
+ ☑ Geolocation and Internet connetcion service ✨
+ ☑ Google Map ✨
+ 
+## How to start 
+---
+```dart
+git clone https://github.com/weluid/maxopen_test.git
+cd maxopen_test
+flutter packages get
+flutter run
+```
+## Setup Android/IOS with Google Map API key
+Android:
+Specify your API key in the application manifest android/app/src/main/AndroidManifest.xml:
+```dart
+<manifest ...
+  <application ...
+    <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="API-KEY"/>
+```
+IOS:
+Specify your API key in the application delegate ios/Runner/AppDelegate.swift:
+```dart
+ GMSServices.provideAPIKey("API-KEY")
+```
 
-This project is a starting point for a Flutter application.
+## Tech
+---
+Libraries used in the project:
 
-A few resources to get you started if this is your first Flutter project:
+- [Bloc] - makes it easy to separate UI from business logic, making code fast and reusable
+- [Connectivity Plus] - allows Flutter apps to discover network connectivity
+- [Geolocator] - provides easy access to location services
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+   [Bloc]: <https://pub.dev/packages/flutter_bloc>
+   [Connectivity Plus]: <https://pub.dev/packages/connectivity_plus>
+   [Geolocator]: <https://pub.dev/packages/geolocator>
+>
